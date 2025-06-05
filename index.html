@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍏BonSanté🥬 - Guide Nutritionnel</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="floating-food">🍎</div>
+        <div class="floating-food">🥕</div>
+        <div class="floating-food">🥬</div>
+        <div class="floating-food">🍊</div>
+        <div class="floating-food">🥑</div>
+        <div class="floating-food">🍇</div>
+    </div>
+
+    <header class="glassmorphism">
+        <h1 class="glow-text">🍏BonSanté🥬</h1>
+        <p class="subtitle">Votre guide nutritionnel intelligent</p>
+        
+        <div class="search-container">
+            <div class="search-box glow-border">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-bar" placeholder="Rechercher parmi 1000+ aliments...">
+                <button id="search-btn" class="pulse-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="weight-input">
+            <div class="weight-box glow-border">
+                <i class="fas fa-weight"></i>
+                <label for="weight">Poids (kg):</label>
+                <input type="number" id="weight" placeholder="70" min="30" max="200">
+                <button id="weight-btn" class="pulse-btn">
+                    <i class="fas fa-calculator"></i>
+                    Calculer
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="categories-view" class="view active">
+            <h2 class="section-title glow-text">Catégories Alimentaires</h2>
+            <div class="categories-grid">
+                <div class="category-card glow-card" data-category="glucides">
+                    <div class="category-icon">🍞</div>
+                    <h3>Glucides</h3>
+                    <p>Sources d'énergie principales</p>
+                    <div class="category-stats">200+ aliments</div>
+                </div>
+                <div class="category-card glow-card" data-category="lipides">
+                    <div class="category-icon">🥑</div>
+                    <h3>Lipides</h3>
+                    <p>Graisses essentielles</p>
+                    <div class="category-stats">150+ aliments</div>
+                </div>
+                <div class="category-card glow-card" data-category="proteines">
+                    <div class="category-icon">🍖</div>
+                    <h3>Protéines</h3>
+                    <p>Construction musculaire</p>
+                    <div class="category-stats">180+ aliments</div>
+                </div>
+                <div class="category-card glow-card" data-category="vitamines">
+                    <div class="category-icon">🍊</div>
+                    <h3>Vitamines</h3>
+                    <p>Nutriments essentiels</p>
+                    <div class="category-stats">250+ aliments</div>
+                </div>
+                <div class="category-card glow-card" data-category="mineraux">
+                    <div class="category-icon">🥬</div>
+                    <h3>Minéraux</h3>
+                    <p>Équilibre corporel</p>
+                    <div class="category-stats">200+ aliments</div>
+                </div>
+                <div class="category-card glow-card" data-category="antioxydants">
+                    <div class="category-icon">🫐</div>
+                    <h3>Antioxydants</h3>
+                    <p>Protection cellulaire</p>
+                    <div class="category-stats">120+ aliments</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="pyramid-view" class="view">
+            <button id="back-btn" class="back-btn glow-border">
+                <i class="fas fa-arrow-left"></i> Retour aux catégories
+            </button>
+            <h2 id="pyramid-title" class="section-title glow-text"></h2>
+            <div id="pyramid-container">
+                <div class="pyramid">
+                    <div class="pyramid-level level-1 glow-border" id="level-1">
+                        <div class="level-title">Recommandés ✅</div>
+                        <div class="level-foods"></div>
+                    </div>
+                    <div class="pyramid-level level-2 glow-border" id="level-2">
+                        <div class="level-title">Modération ⚠️</div>
+                        <div class="level-foods"></div>
+                    </div>
+                    <div class="pyramid-level level-3 glow-border" id="level-3">
+                        <div class="level-title">À éviter ❌</div>
+                        <div class="level-foods"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="food-detail-view" class="view">
+            <button id="back-to-pyramid" class="back-btn glow-border">
+                <i class="fas fa-arrow-left"></i> Retour à la pyramide
+            </button>
+            <div id="food-details" class="glassmorphism"></div>
+        </div>
+
+        <div id="recommendations-view" class="view">
+            <button id="back-to-categories" class="back-btn glow-border">
+                <i class="fas fa-arrow-left"></i> Retour aux catégories
+            </button>
+            <h2 class="section-title glow-text">Recommandations Personnalisées</h2>
+            <div id="recommendations-content" class="glassmorphism"></div>
+        </div>
+    </main>
+
+    <audio id="click-sound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmYdBDWH0fPTgjMGHm7A7+OZURE=" type="audio/wav">
+    </audio>
+    <audio id="success-sound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmYdBDWH0fPTgjMGHm7A7+OZURE=" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
